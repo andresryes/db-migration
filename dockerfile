@@ -2,8 +2,7 @@ FROM oraclelinux:7-slim
 # Create app directory
 WORKDIR /usr/src/app
 # Copy the .js files from your host machine into the new app directory
-ADD /db-migration/app/ ./
-ADD /files-db/secure/ wallet/
+ADD app/ ./
 # Update Oracle Linux
 # Install NodeJS
 # Install the Oracle Instant Client
