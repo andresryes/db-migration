@@ -17,5 +17,6 @@ RUN yum update -y && \
   node --version && \
   npm --version && \
   npm install oracledb && \
+  npm install express && \
   echo Installed :)
 CMD ["node", "server.js"]
