@@ -156,7 +156,7 @@ app.post('/location', async (req, res) => {
 });
 
 /* Update empleado.salario, empleado.puesto por ID 
-update employees set salary = 24500, job_id = 'AD_VP' where employee_id = 100
+	update employees set salary = 24500, job_id = 'AD_VP' where employee_id = 100
 */
 app.post('/empleado/:idEmpleado', async (req, res) => {
   if (process.env.NODE_DB === "ORACLE"){
@@ -180,7 +180,7 @@ app.post('/empleado/:idEmpleado', async (req, res) => {
 });
 
 /* Eliminar empleado por ID
-delete from employees where employee_id = 178
+	delete from employees where employee_id = 178
 */
 app.delete('/empleado/:idEmpleado', async (req, res) => {
   if (process.env.NODE_DB === "ORACLE"){
