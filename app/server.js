@@ -105,7 +105,7 @@ app.post('/puesto', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -136,7 +136,7 @@ app.post('/region', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -167,7 +167,7 @@ app.post('/pais', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -198,7 +198,7 @@ app.post('/location', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -232,7 +232,7 @@ app.post('/empleado/:idEmpleado', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -268,7 +268,7 @@ app.delete('/empleado/:idEmpleado', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
@@ -298,7 +298,7 @@ app.get('/empleado/:idEmpleado', async (req, res) => {
       res.send(result);
     } catch (err) {
       console.error(err);
-      res.send(result)
+      res.send(err)
     } finally {
       if (conn) {
         try {
