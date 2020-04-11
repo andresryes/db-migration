@@ -61,8 +61,8 @@ app.get('/count', async (req, res) => {
 app.post('/empleado', async (req, res) => {
   let b = req.body
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'insert into employees values (:0, :1, :2, :3, :4, to_date(:5,\'DD-MON-RR\'), :6, :7, :8, :9, :10, :11)',
@@ -93,8 +93,8 @@ app.post('/empleado', async (req, res) => {
 app.post('/puesto', async (req, res) => {
   let b = req.body
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'insert into jobs values (:0, :1, :2, :3)',
@@ -124,8 +124,8 @@ app.post('/puesto', async (req, res) => {
 app.post('/region', async (req, res) => {
   let b = req.body
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'insert into regions values (:0, :1)',
@@ -155,8 +155,8 @@ app.post('/region', async (req, res) => {
 app.post('/pais', async (req, res) => {
   let b = req.body
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'insert into countries values (:0, :1, :2)',
@@ -186,8 +186,8 @@ app.post('/pais', async (req, res) => {
 app.post('/location', async (req, res) => {
   let b = req.body
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'insert into locations values (:0, :1, :2, :3, :4, :5)',
@@ -220,8 +220,8 @@ app.post('/location', async (req, res) => {
 */
 app.post('/empleado/:idEmpleado', async (req, res) => {
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'update employees set salary = :salary, job_id = :job where employee_id = :id',
@@ -256,8 +256,8 @@ app.post('/empleado/:idEmpleado', async (req, res) => {
 */
 app.delete('/empleado/:idEmpleado', async (req, res) => {
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'delete from employees where employee_id = :id',
@@ -287,8 +287,8 @@ app.delete('/empleado/:idEmpleado', async (req, res) => {
 /* Consultar empleado por ID */
 app.get('/empleado/:idEmpleado', async (req, res) => {
   if (process.env.NODE_DB === "ORACLE"){
+    let conn;
     try{
-      let conn;
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
         'select * from employees where employee_id = :id',
