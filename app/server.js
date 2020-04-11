@@ -65,7 +65,7 @@ app.post('/empleado', async (req, res) => {
     try{
       conn = await oracledb.getConnection(config);
       const result =  await conn.execute(
-        'insert into employees values (:0, :1, :2, :3, :4, to_date(:5,\'DD-MON-RR\'), :6, :7, :8, :9, :10, :11)',
+        'insert into employees values (:0, :1, :2, :3, :4, to_date(:5,\'DD-MON-RR\'), :6, :7, :8, :9, :10)',
         [b.employee_id, b.first_name, b.last_name, b.email, b.phone_number, b.hire_date,
       b.job_id, b.salary, b.comission_pct, b.manager_id, b.department_id],
       {autoCommit:true}
