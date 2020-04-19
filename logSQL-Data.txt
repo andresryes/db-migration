@@ -1,0 +1,212 @@
+--- START --------------------------------------------------------------------
+The target database 12.1.0.2.0 is an older version than the source 18.0.0.0.0. As a result the storage clause is being ignored to avoid any incompatibility issues between versions.
+--- END --------------------------------------------------------------------
+
+Copy Option: Objects Copy
+Source Connection: hr
+Destination Connection: oracle-rds-hr
+DDL Objects:
+Tables
+Views
+Materialized Views
+Data Objects:
+Tables
+All Tables
+Copy DDL: No
+Copy Data: Yes
+Truncate Existing Objects
+--- START --------------------------------------------------------------------
+alter table "COUNTRIES" DISABLE constraint "COUNTR_REG_FK";
+
+
+Table "COUNTRIES" altered.
+
+
+alter table "DEPARTMENTS" DISABLE constraint "DEPT_LOC_FK";
+alter table "DEPARTMENTS" DISABLE constraint "DEPT_MGR_FK";
+
+
+Table "DEPARTMENTS" altered.
+
+
+Table "DEPARTMENTS" altered.
+
+
+alter table "EMPLOYEES" DISABLE constraint "EMP_DEPT_FK";
+alter table "EMPLOYEES" DISABLE constraint "EMP_JOB_FK";
+alter table "EMPLOYEES" DISABLE constraint "EMP_MANAGER_FK";
+
+
+Table "EMPLOYEES" altered.
+
+
+Table "EMPLOYEES" altered.
+
+
+Table "EMPLOYEES" altered.
+
+
+
+
+alter table "JOB_HISTORY" DISABLE constraint "JHIST_JOB_FK";
+alter table "JOB_HISTORY" DISABLE constraint "JHIST_EMP_FK";
+alter table "JOB_HISTORY" DISABLE constraint "JHIST_DEPT_FK";
+
+
+Table "JOB_HISTORY" altered.
+
+
+Table "JOB_HISTORY" altered.
+
+
+Table "JOB_HISTORY" altered.
+
+
+alter table "LOCATIONS" DISABLE constraint "LOC_C_ID_FK";
+
+
+Table "LOCATIONS" altered.
+
+
+
+
+--- END --------------------------------------------------------------------
+
+--- START --------------------------------------------------------------------
+  TRUNCATE TABLE "COUNTRIES";
+
+
+Table "COUNTRIES" truncated.
+
+
+  TRUNCATE TABLE "DEPARTMENTS";
+
+
+Table "DEPARTMENTS" truncated.
+
+
+  TRUNCATE TABLE "EMPLOYEES";
+
+
+Table "EMPLOYEES" truncated.
+
+
+  TRUNCATE TABLE "JOBS";
+
+
+Table "JOBS" truncated.
+
+
+  TRUNCATE TABLE "JOB_HISTORY";
+
+
+Table "JOB_HISTORY" truncated.
+
+
+  TRUNCATE TABLE "LOCATIONS";
+
+
+Table "LOCATIONS" truncated.
+
+
+  TRUNCATE TABLE "REGIONS";
+
+
+Table "REGIONS" truncated.
+
+
+--- END --------------------------------------------------------------------
+
+--- START --------------------------------------------------------------------
+Moving Data for object COUNTRIES
+
+Insert 25 rows into COUNTRIES in 1,194 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object DEPARTMENTS
+
+Insert 27 rows into DEPARTMENTS in 1,269 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object EMPLOYEES
+
+Insert 109 rows into EMPLOYEES in 2,365 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object JOBS
+
+Insert 19 rows into JOBS in 505 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object JOB_HISTORY
+
+Insert 11 rows into JOB_HISTORY in 1,164 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object LOCATIONS
+
+Insert 23 rows into LOCATIONS in 533 milliseconds
+--- END --------------------------------------------------------------------
+
+Moving Data for object REGIONS
+
+Insert 7 rows into REGIONS in 522 milliseconds
+--- END --------------------------------------------------------------------
+
+--- START --------------------------------------------------------------------
+alter table "COUNTRIES" ENABLE constraint "COUNTR_REG_FK";
+
+
+Table "COUNTRIES" altered.
+
+
+alter table "DEPARTMENTS" ENABLE constraint "DEPT_LOC_FK";
+alter table "DEPARTMENTS" ENABLE constraint "DEPT_MGR_FK";
+
+
+Table "DEPARTMENTS" altered.
+
+
+Table "DEPARTMENTS" altered.
+
+
+alter table "EMPLOYEES" ENABLE constraint "EMP_DEPT_FK";
+alter table "EMPLOYEES" ENABLE constraint "EMP_JOB_FK";
+alter table "EMPLOYEES" ENABLE constraint "EMP_MANAGER_FK";
+
+
+Table "EMPLOYEES" altered.
+
+
+Table "EMPLOYEES" altered.
+
+
+Table "EMPLOYEES" altered.
+
+
+
+
+alter table "JOB_HISTORY" ENABLE constraint "JHIST_JOB_FK";
+alter table "JOB_HISTORY" ENABLE constraint "JHIST_EMP_FK";
+alter table "JOB_HISTORY" ENABLE constraint "JHIST_DEPT_FK";
+
+
+Table "JOB_HISTORY" altered.
+
+
+Table "JOB_HISTORY" altered.
+
+
+Table "JOB_HISTORY" altered.
+
+
+alter table "LOCATIONS" ENABLE constraint "LOC_C_ID_FK";
+
+
+Table "LOCATIONS" altered.
+
+
+
+
+--- END --------------------------------------------------------------------
+
